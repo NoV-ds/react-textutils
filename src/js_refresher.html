@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let a =45 
+        // let a = 34
+
+        // var a = 343 
+        // a = "jdsfjk" 
+
+        // const a = 544
+        // a = 3232  
+        // console.log(a)
+
+        // document.addEventListener("click", function click(event) {
+        //     alert("Hellllooooooo JS Initiatior")
+        //     confirm("are you sure?")
+        // })
+    </script>
+</head>
+<body>
+    <h1>JS</h1>
+    <h2 style="color: blueviolet;">Defining Variable Types</h2>
+    <h4>Let</h4><p>This will provide error as from let we can declare only once it works in scope</p>
+    <p>        let a =45 
+        let a = 34
+    </p>
+    <p style="color: red;">Uncaught SyntaxError: Identifier 'a' has already been declared</p>
+
+    <h4>Var</h4><p>This will update the value of a as value define with var can be updated and it can be used as global scope</p>
+    <p>        var a = 343 
+        a = "jdsfjk" 
+    </p>
+    <p style="color:green;"><b>New value:</b>  jdsfjk</p>
+
+    <h4>Const</h4><p>This will raise an exception as value define by const can be use anywhere but that variable is immutable like we can not update the value for that constant variable</p>
+    <p>        const a = 544
+        a = 3232  
+    </p>
+    <p style="color: red;">Uncaught TypeError: Assignment to constant variable.</p>
+    <hr>
+    <h2 style="color: blueviolet;">Defining Data Types</h2>
+    <h4>Numbers</h4>
+    <p>This are for interger float double any kind of numbers like <b>0 12 43 34 455</b></p>
+
+    <h4>String</h4>
+    <p>This are for any character comes to form a word or sentence like <b>a, abc, helllo</b></p>
+
+    <h4>Booleans</h4>
+    <p>This shows the disctint condition of a value for something its or for some its wrong then for right thing it will show <b>true</b> and for wrong it will show <b>false</b></p>
+    <p><b>Note:</b> This is uncertain as it depends on developer's perspective and requirement</p>
+
+    <h4>objects</h4>
+    <p>objects are like dictionaries which have key-value pair where keys are always unique <b>{"1": ddsd, "2": fdsf, 3: sfs, 4: dfdfs}</b></p>
+
+    <h4>Undefined</h4>
+    <p>Undefined means the variable has been declared, but its value has not been assigned, javascript does this at run time also if a function is defined but returning nothing in that case it will return undefined</p>
+    <p>it returns NaN while performing arithmatic operations</p>
+
+    <h4>Null</h4>
+    <p>A Null value means blank or empty where the null value is externally assign to a variable as to show it is blank or null Also null is an object in javascript which represent no value</p>
+    <p>it converts to 0 while performing arithmatic operations</p>
+    <hr>
+
+    <h4>First-class Function</h4>
+    <p style="margin-left: 20px;">1. A functions can be treated as another variable</p>
+    <p style="margin-left: 20px;">2. A function can be passed as an argument, The function we pass as an argument to another function is called a callback() function <b>
+        function sayHello() {
+            return "Hello, ";
+          }
+          function greeting(helloMessage, name) {
+            console.log(helloMessage() + name);
+          }
+          // Pass `sayHello` as an argument to `greeting` function
+          greeting(sayHello, "JavaScript!");
+          // Hello, JavaScript!
+          
+    </b></p>
+    <p style="margin-left: 20px;">3. A function can return another function because function is javascript treated as values</p>
+    <p style="margin-left: 20px;">4. A functions is a block of code which is created for certain logic, This code can be reuse for multiple files</p>
+    <p>functions are write like <b>function {
+        logic to write
+    };
+    </b></p>
+    <p>basically it has a return value and if no return value assigned it will return undefined</p>
+    
+
+    <h4>Events</h4>
+    <p>when user react on page and in response to that react some signaficant action is perfomed which change some feature on functionality, it is called an event</p>
+    <p>Example: <b>        document.addEventListener("click", function click(event) {
+        alert("Hellllooooooo JS Initiatior")
+    })
+    </b></p>
+    <b>Some certain Example are as follows:</b>
+        <li style="margin-left: 20px;">The user selects, clicks, or hovers the cursor over a certain element. </li>
+        <li style="margin-left: 20px;">The user presses a key on the keyboard.</li>
+        <li style="margin-left: 20px;">The user resizes or closes the browser window.</li>
+        <li style="margin-left: 20px;">A web page finishes loading.</li>
+        <li style="margin-left: 20px;">A form is submitted.</li>
+        <li style="margin-left: 20px;">A video is played, paused, or ends.</li>
+        <li style="margin-left: 20px;">An error occurs.</li>
+        
+    <h4>This Keyword</h4>
+    <p>basically this keyword is a window object which is used to get elements or values from the window</p>
+    <p>In normal function this keyword work for that perticular function</p>
+    <p>In arrow function this work as a window object</p>
+
+</body>
+</html>
