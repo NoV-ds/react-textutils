@@ -1,40 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function About() {
+export default function About(prop) {
 
     let darkStyle = {
         color: 'white',
         backgroundColor: 'black',
-        border: '1px solid white'
+        // border: '1px solid white'
     }
 
     let lightStyle = {
         color: 'black',
-        backgroundColor: 'white',
-        border: '1px solid black'
-    }
-    const [myStyle, setMyStyle] = useState(lightStyle)
-
-    const [btntext, setBtnText] = useState("Enable Dark Mode")
-
-    const toggleStyle = () => {
-        if (myStyle.color === 'black'){
-            setMyStyle((myStyle) => darkStyle)
-            setBtnText((btn) => "Enable Light Mode")
-        }
-        else {
-            setMyStyle((myStyle) => lightStyle)
-            setBtnText((btn) => "Enable Dark Mode")
-        }
+        backgroundColor: 'blue',
+        // border: '1px solid black'
     }
 
     return (
-        <div  className='container' style={myStyle}>
+        <div  className='container' style={prop.mode === "light"?lightStyle:darkStyle}>
                 <h1 className='my-3'>About Us</h1>
             <div className="accordion" id="accordionExample">
-                <div className="accordion-item"  style={myStyle}>
+                <div className="accordion-item"  style={prop.mode === "light"?lightStyle:darkStyle}>
                     <h2 className="accordion-header" id="headingOne">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  style={myStyle}>
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  style={prop.mode === "light"?lightStyle:darkStyle}>
                             Accordion Item #1
                         </button>
                     </h2>
@@ -44,9 +30,9 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="accordion-item"  style={myStyle}>
+                <div className="accordion-item"  style={prop.mode === "light"?lightStyle:darkStyle}>
                     <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  style={myStyle}>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  style={prop.mode === "light"?lightStyle:darkStyle}>
                             Accordion Item #2
                         </button>
                     </h2>
@@ -56,9 +42,9 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="accordion-item"  style={myStyle}>
+                <div className="accordion-item"  style={prop.mode === "light"?lightStyle:darkStyle}>
                     <h2 className="accordion-header" id="headingThree">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"  style={myStyle}>
+                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"  style={prop.mode === "light"?lightStyle:darkStyle}>
                             Accordion Item #3
                         </button>
                     </h2>
@@ -69,7 +55,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <button type="button" onClick={toggleStyle} className='my-2' style={myStyle}>{btntext}</button>
+            {/* <button type="button" onClick={toggleStyle} className='my-2' style={prop.mode === "light"?lightStyle:darkStyle}>{btntext}</button> */}
         </div>
     )
 }
