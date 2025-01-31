@@ -4,19 +4,26 @@ import React from 'react'
 export default function Textform(prop) {
     const textToUpperCase = () => {
         setText((prev) => prev.toUpperCase())
+        prop.showAlert("primary", "Text converted to UpperCase")
+        prop.alertTimeOut()
     }
 
     const textToLowerCase = () => {
         setText((prev) => prev.toLowerCase())
+        prop.showAlert("primary", "Text converted to lower Case")
+        prop.alertTimeOut()
     }
 
     const textToCapitalizeCase = () => {
-        setText((prev) => prev.split(" ")
-        )
+        setText((prev) => prev.charAt(0).toUpperCase() + prev.slice(1))
+        prop.showAlert("primary", "Text converted to capitlize Case")
+        prop.alertTimeOut()
     }
 
     const clearText = () => {
         setText((prev) => (""))
+        prop.showAlert("primary", "Text cleared")
+        prop.alertTimeOut()
     }
 
     const GetText = () =>
