@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from 'react-router';
 import './App.css';
 import About from './componants/About';
 import Alert from './componants/Alert';
@@ -7,7 +8,7 @@ import { useState } from 'react';
 
 function App() {
 
-  const [alert, setAlert] = useState(null)
+  const [alert, setAlert] = useState("primary", "None")
 
   const showAlert = (type, message) => {
     setAlert({
@@ -16,10 +17,12 @@ function App() {
     })
   }
   const [mode, setMode] = useState("light")
+  document.body.style.backgroundColor = "blue";
+
   const alertTimeOut = () => {
     setTimeout(() => {
       setAlert((alert) => null)
-    }, 1000);
+    }, 100000);
 
   }
   const toggleMode = () => {
@@ -43,10 +46,15 @@ function App() {
     <>
     <Navbar title="Textutils" about="About" mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert} mode={mode} />
-    <div className="container my-3" >
-    <Textform heading="Lets analyze the context" mode={mode} showAlert={showAlert} alertTimeOut={alertTimeOut} />
-    <About mode={mode} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Textform heading="Lets analyze the context" mode={mode} showAlert={showAlert} alertTimeOut={alertTimeOut} />} />
+        <Route exact path="/about" element={<About mode={mode} />} />
+        <Route exact path="/text-form" element={
+          <Textform heading="Lets analyze the context" mode={mode} showAlert={showAlert} alertTimeOut={alertTimeOut} />
+          } />
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }
